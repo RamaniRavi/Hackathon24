@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row schedule-builder-row">
+        <div class="card">
+            <div class="row d-flex card-body justify-content-between schedule-card">
+                <div class="col-9">
+                    <h3 class="card-title card-title2">Schedule Builder</h3>
+                </div>
+                <div class="col-3">
+                    
+                    <button type="button" style="width: 300px; height: 50px; font-size: 23px;" class="btn btn-primary float-end" (click)="autoSolve()">
+                        <i class="fa fa-magic" aria-hidden="true"></i>
+                        Generate Schedule
+                    </button>
+                    <button type="button" style="width: 60px; height: 50px; font-size: 23px; margin-right: 10px;" class="btn btn-secondary float-end">
+                        <i class="fa fa-sliders" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 calender-col">
+            <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">Calendar</h3>
+                  <div class="h-100">
+                    <full-calendar #calendar id="calendar"
+                        [options]="calendarOptions"
+                        [events]="eventsPromise | async"
+                        ></full-calendar> 
+                    </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-4 people-col">
+            <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">People</h3>
+                  <div class="h-100" style="margin-bottom: 25px;">
+                    <ng-select [items]="customers" bindLabel="name" bindValue="id" (change)="onCustomerSelected($event)" placeholder="Select the customer">
+                        <ng-option *ngFor="let car of customers" [value]="car.id">{{car.name}}</ng-option>
+                     </ng-select>
+                    </div>
+                    <div class="h-100">
+                        <div *ngFor="let employee of employees" 
+                            class="employee-card" [ngClass]="{'selected-employee-card': findEmployee(employee.Id) }">
+                            <!-- User image -->
+                            <div class="user-image">
+                                <!-- Placeholder image or real user image source -->
+                                <img src="../../assets/default-avatar-20.jpg" alt="User Image">
+                            </div>
+                            <!-- Employee details -->
+                            <div class="employee-details">
+                                <!-- Name -->
+                                <div class="name">{{ employee.FirstName }} {{ employee.LastName }}</div>
+                                <!-- Static value -->
+                                <div class="static-value">{{employee.JobType[0].JobTypeName}}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<ngx-spinner 
+    bdColor = "rgba(0, 0, 0, 0.8)" 
+    size = "large" color = "#ffffff" 
+    type = "ball-scale-ripple-multiple" 
+    [fullScreen] = "true" >
+    <p style="color: white" > {{autoSolveClicked ? 'Rostering...' : 'Fetching work...'}} </p>
+</ngx-spinner>

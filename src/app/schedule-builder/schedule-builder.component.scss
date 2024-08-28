@@ -1,0 +1,161 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+  
+ #calendar {
+    max-width: 100%;
+    margin-top: 20px;
+    // color: black;
+    // text-decoration: none;
+  }
+
+  .row {
+    margin-left: 60px;
+  }
+
+  .schedule-builder-row{
+    border: 15px solid #E0E0E7 !important;
+  }
+
+  .schedule-card{
+    margin-left: -8px !important;
+  }
+  .label-1{
+    font-size: 25px;
+  }
+  body {
+    background-color: #eff3f7;
+  }
+
+  .card {
+    border: hidden;
+  }
+
+.label {
+  padding: 10px 0px;
+}
+
+  .calender-col{
+    border: 15px solid #E0E0E7 !important;
+    //border-radius: 15px;
+  }
+
+  .people-col{
+    border: 15px solid #E0E0E7 !important;
+    //border-radius: 5px;
+  }
+
+  .container {
+    margin: 0;
+    margin-top: 70px !important;
+    max-width: 100% !important;
+  }
+
+
+.events {
+  width: 300px !important;
+}
+
+  .employee-card {
+    display: flex;
+    align-items: center;
+    width: 100%; /* 80% of available space */
+    height: 60px;
+    background-color: #ffe5d9;
+    border-radius: 10px; /* Rounded corners */
+    margin-left: 10px; /* Add margin to the left */
+    padding: 10px; /* Add padding */
+    margin: 10px 0px;
+    cursor: pointer; /* Add cursor pointer */
+}
+
+.selected-employee-card {
+    background-color: #C1F2B0; /* Change background color for selected employees */
+}
+
+.user-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden; /* Ensures the image doesn't overflow */
+}
+
+.user-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.employee-details {
+    flex: 1;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.static-value {
+    /* Add styles for the static value */
+}
+
+::ng-deep .fc .fc-col-header-cell-cushion{
+  color: black;
+  text-decoration: none;
+}
+
+::ng-deep .fc .fc-daygrid-day-number {
+  color: black;
+  text-decoration: none;
+}
+
+::ng-deep .fc .fc-daygrid-day-frame {
+  max-height: 1px;
+}
+
+::ng-deep  .fc-h-event .fc-event-title-container {
+  height: 40px;
+  align-content: center;
+  text-align: center;
+  font-size: 15px;
+}
+
+.card-title {
+  margin-bottom: 18px;
+  margin-top: 8px;
+}
+
+.card-title2 {
+  font-weight: 650;
+}
+
+::ng-deep .fc-daygrid-block-event .fc-event-title  {
+  padding: 1px;
+  text-wrap: pretty !important;
+}
+
+.event-container {
+  //border: 1px solid #90D26D; /* Add border */
+  padding: 10px; /* Add padding */
+}
+
+.event-container .title {
+  font-weight: bold; /* Make title bold */
+}
+
+.employees-box {
+  border: 1px solid #008000;
+  border-radius: 5px;
+  background-color: #039603; /* Add background color */
+  padding: 5px; /* Add padding */
+}
+
+.employees-box .employee {
+  margin-bottom: 1px; /* Add margin between employees */
+}
+
+::ng-deep .fc .fc-scrollgrid-section-body table {
+  height:900px !important ;
+}
